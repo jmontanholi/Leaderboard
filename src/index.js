@@ -1,6 +1,9 @@
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import addScore from './AddScores.js';
+import createDom from './createDom.js';
+
+createDom();
 
 const scoreList = [{ name: 'joão vítor', score: '252' }, { name: 'Mario', score: '591' }, { name: 'John Wick', score: '209' }];
 
