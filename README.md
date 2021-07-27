@@ -1,18 +1,20 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Leaderboard
 
-> One paragraph statement about the project.
+> Leaderboard to compare users scores!
 
 ![screenshot](./app_screenshot.png)
 
-Additional description about the project and its features.
+This is a leaderboard website project with the goal to teach us how to use APIs.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML & CSS
+- Bootstrap
+- JavaScript
+- Webpack
+- Git & Github
 
 ## Live Demo
 
@@ -21,40 +23,32 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- GitHub account
+- Code Editor
+- Browser
 ### Setup
 
+  Simply choose a directory where you want to clone this project and use the following command
+  ```git clone https://github.com/jmontanholi/Leaderboard.git```
 ### Install
 
+  Run these commands in order
+  ```npm install```
+  ```npm run build``` or ```npm run start```
 ### Usage
 
-### Run tests
-
-### Deployment
-
-
-
+  Simply open the index.html file in the dist folder
 ## Authors
 
-👤 **Author1**
+👤 **João Vítor Montanholi Nunes**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
+- GitHub: [jmontanholi](https://github.com/jmontanholi)
+- Twitter: [MontanholiNunes](https://twitter.com/MontanholiNunes)
+- LinkedIn: [Joao vitor montanholi](https://www.linkedin.com/in/joaovitormontanholi/)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
@@ -67,9 +61,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Microverse
 
 ## 📝 License
 
