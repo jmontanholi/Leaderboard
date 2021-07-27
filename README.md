@@ -4,7 +4,7 @@
 
 > Leaderboard to compare users scores!
 
-![screenshot](./printscreen.png)
+![screenshot](./printscreen.PNG)
 
 This is a leaderboard website project with the goal to teach us how to use APIs.
 
