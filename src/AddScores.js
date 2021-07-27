@@ -18,5 +18,19 @@ export default function addScore(scoreList) {
     <p class='score'>${userScore.value}</p>
     `;
     leaderboardScores.appendChild(li);
+    userName.value = '';
+    userScore.value = '';
   }
 }
+
+userName.addEventListener('change', () => {
+  error.classList.remove('d-grid');
+  error.classList.add('d-none');
+  submitBtn.classList.add('submit');
+});
+
+userScore.addEventListener('change', () => {
+  error.classList.remove('d-grid');
+  error.classList.add('d-none');
+  submitBtn.classList.add('submit');
+});

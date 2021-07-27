@@ -34,8 +34,8 @@
 
 .scores-div {
   overflow: auto;
-  min-height: 200px;
-  max-height: 380px;
+  min-height: 250px;
+  max-height: 250px;
   border: 2px solid gray;
   border-radius: 10px;
 }
