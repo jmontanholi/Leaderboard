@@ -13,7 +13,7 @@
 
 .title {
   font-size: 80px;
-  margin: 1% 0 0 2%
+  margin: 1% 0 0 2%;
 }
 
 .leaderboard-show {
@@ -71,6 +71,7 @@ li {
 .player {
   margin: 0;
 }
+
 .points {
   margin: 0;
 }
