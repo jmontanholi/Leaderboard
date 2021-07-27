@@ -2,7 +2,7 @@ import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import addScore from './AddScores.js';
 
-const scoreList = [{ name: 'joão vítor', score: '252' }];
+const scoreList = [{ name: 'joão vítor', score: '252' }, { name: 'Mario', score: '591' }, { name: 'John Wick', score: '209' }];
 
 const submitBtn = document.getElementById('submitBtn');
 const leaderboardScores = document.getElementById('leaderboardScores');
