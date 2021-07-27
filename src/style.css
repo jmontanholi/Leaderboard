@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+* {
+  font-family: 'Comic Neue', cursive;
+  list-style: none;
+}
+
+.error {
+  color: red;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.title {
+  font-size: 80px;
+  margin: 1% 0 0 2%
+}
+
+.leaderboard-show {
+  width: 35%;
+  min-height: 200px;
+  max-height: 500px;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+
+.leaderboard-form {
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+  margin-top: 195px;
+}
+
+.scores-div {
+  overflow: auto;
+  min-height: 200px;
+  max-height: 380px;
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+
+.leaderboard-scores {
+  font-size: 56px;
+  overflow: auto;
+}
+
+.leaderboard-title {
+  margin-bottom: 20px;
+}
+
+.button {
+  border-radius: 8px;
+  font-weight: bold;
+  border: 2px solid black;
+  box-shadow: 5px 10px 5px gray;
+}
+
+.button:hover {
+  box-shadow: 1px 2px 2px gray;
+  background-color: rgb(226, 226, 226);
+}
+
+/* create this in JS */
+li {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+.player {
+  margin: 0;
+}
+.points {
+  margin: 0;
+}
+
+.submit {
+  margin-left: 180px;
+}
