@@ -2,7 +2,6 @@ const userName = document.getElementById('userName');
 const userScore = document.getElementById('userScore');
 const error = document.getElementById('error');
 const submitBtn = document.getElementById('submitBtn');
-const leaderboardScores = document.getElementById('leaderboardScores');
 
 export default function addScore(scoreList) {
   if (userName.value.trim() === '' || userScore.value.trim() === '') {
@@ -12,14 +11,6 @@ export default function addScore(scoreList) {
   } else {
     const score = { name: userName.value, score: userScore.value };
     scoreList.push(score);
-    const li = document.createElement('li');
-    li.innerHTML = `
-    <p class='player'>${userName.value}</p>
-    <p class='score'>${userScore.value}</p>
-    `;
-    leaderboardScores.appendChild(li);
-    userName.value = '';
-    userScore.value = '';
   }
 }
 
