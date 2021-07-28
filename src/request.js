@@ -31,9 +31,9 @@ async function createScores(user, score) {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  })
+  });
   const result = await response.json();
   return result;
-};
+}
 
 export { createGame as default, getScores, createScores };
