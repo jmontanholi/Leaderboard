@@ -1,61 +1,39 @@
 const createGame = () => {
-  const promise = new Promise((resolve) => {
-    const games = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
-    const xhr = new XMLHttpRequest();
-
-    xhr.open('POST', games);
-
-    xhr.responseType = 'json';
-
-    xhr.onload = () => {
-      resolve(xhr.response.result.split(' ')[3]);
-    };
-
-    xhr.setRequestHeader('Content-type', 'application/json');
-
-    const data = { name: 'Montanholi\'s Game' };
-    xhr.send(JSON.stringify(data));
-  });
-  return promise;
+  const games = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
+  return fetch(games, {
+    method: 'POST',
+    body: JSON.stringify({
+      name: 'Montanholi\'s Game',
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => json.result.split(' ')[3]);
 };
 
-const getScore = () => {
-  const promise = new Promise((resolve) => {
-    createGame().then((responseData) => {
-      const scores = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${responseData}/scores`;
-      const scoreRequest = new XMLHttpRequest();
-      scoreRequest.open('GET', scores);
+const getScores = () => createGame().then((result) => {
+  const scores = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${result}/scores`;
+  return fetch(scores)
+    .then((response) => response.json())
+    .then((json) => json.result);
+});
 
-      scoreRequest.onload = () => {
-        resolve(scoreRequest.response);
-      };
+const createScores = (user, score) => createGame().then((result) => {
+  const scores = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${result}/scores`;
+  return fetch(scores, {
+    method: 'POST',
+    body: JSON.stringify({
+      user,
+      score,
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => console.log(json.result));
+});
 
-      scoreRequest.setRequestHeader('Content-type', 'application/json');
-      scoreRequest.send();
-    });
-  });
-  return promise;
-};
-
-const setScore = (user, score, func) => {
-  const promise = new Promise((resolve) => {
-    createGame().then((responseData) => {
-      const scores = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${responseData}/scores`;
-      const scoreRequest = new XMLHttpRequest();
-      scoreRequest.open('POST', scores);
-
-      scoreRequest.onload = () => {
-        resolve(scoreRequest.response);
-      };
-
-      scoreRequest.setRequestHeader('Content-type', 'application/json');
-
-      const data = { user, score };
-      scoreRequest.send(JSON.stringify(data));
-    });
-  });
-  func();
-  return promise;
-};
-
-export { createGame as default, getScore, setScore };
+export { createGame as default, getScores, createScores };

@@ -44,7 +44,7 @@ const createDom = () => {
     <input class='text-center' type="text" name="username" id="userName" placeholder="e.g: John Wick">
     <label class='mt-3' for="userScore">Your score</label>
     <input class='text-center' type="number" name="userscore" id="userScore" placeholder="e.g: 209">
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center" id='submitDiv'>
       <p class="d-none error m-0" id='error'>Invalid Input!</p>
       <input class='mt-3 button submit' type="submit" name="submitBtn" id="submitBtn" value='Submit'>
     </div>
