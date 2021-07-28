@@ -1,4 +1,4 @@
-async function createGame() {
+const createGame = async () => {
   const games = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
   const response = await fetch(games, {
     method: 'POST',
@@ -11,16 +11,16 @@ async function createGame() {
   });
   const result = await response.json();
   return result.result.split(' ')[3];
-}
+};
 
-async function getScores() {
+const getScores = async () => {
   const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7MRZkAe2WgnNaEn7ujCD/scores';
   const response = await fetch(scores);
   const result = await response.json();
   return result.result;
-}
+};
 
-async function createScores(user, score) {
+const createScores = async (user, score) => {
   const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7MRZkAe2WgnNaEn7ujCD/scores';
   const response = await fetch(scores, {
     method: 'POST',
@@ -34,6 +34,6 @@ async function createScores(user, score) {
   });
   const result = await response.json();
   return result;
-}
+};
 
 export { createGame as default, getScores, createScores };
