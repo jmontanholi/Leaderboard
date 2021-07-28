@@ -2,15 +2,17 @@ import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import addScore from './AddScores.js';
 import createDom from './createDom.js';
+import { getScore } from './request.js';
 
 createDom();
 
-const scoreList = [{ name: 'joão vítor', score: '252' }, { name: 'Mario', score: '591' }, { name: 'John Wick', score: '209' }];
+const scoreList = [];
 
 const submitBtn = document.getElementById('submitBtn');
 const leaderboardScores = document.getElementById('leaderboardScores');
 const userName = document.getElementById('userName');
 const userScore = document.getElementById('userScore');
+const refreshBtn = document.getElementById('refreshBtn');
 
 const populate = () => {
   const sortedList = scoreList.sort((a, b) => {
@@ -40,4 +42,8 @@ populate();
 submitBtn.addEventListener('click', () => {
   addScore(scoreList);
   populate();
+});
+
+getScore().then((result) => {
+  console.log(JSON.parse(result));
 });
