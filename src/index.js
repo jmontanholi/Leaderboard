@@ -2,7 +2,7 @@ import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import addScore from './AddScores.js';
 import createDom from './createDom.js';
-import { getScores } from './request.js';
+import createGame, { getScores } from './request.js';
 
 createDom();
 
@@ -46,3 +46,5 @@ submitBtn.addEventListener('click', () => {
 refreshBtn.addEventListener('click', () => {
   populate();
 });
+
+createGame();

@@ -1,6 +1,6 @@
-const createGame = () => {
+async function createGame() {
   const games = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';
-  return fetch(games, {
+  const response = await fetch(games, {
     method: 'POST',
     body: JSON.stringify({
       name: 'Montanholi\'s Game',
@@ -8,21 +8,21 @@ const createGame = () => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  })
-    .then((response) => response.json())
-    .then((json) => json.result.split(' ')[3]);
-};
+  });
+  const result = await response.json();
+  return result.result.split(' ')[3];
+}
 
-const getScores = () => {
-  const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oqptEhnYZtDs1PlRT1tV/scores';
-  return fetch(scores)
-    .then((response) => response.json())
-    .then((json) => json.result);
-};
+async function getScores() {
+  const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7MRZkAe2WgnNaEn7ujCD/scores';
+  const response = await fetch(scores);
+  const result = await response.json();
+  return result.result;
+}
 
-const createScores = (user, score) => {
-  const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oqptEhnYZtDs1PlRT1tV/scores';
-  return fetch(scores, {
+async function createScores(user, score) {
+  const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/7MRZkAe2WgnNaEn7ujCD/scores';
+  const response = await fetch(scores, {
     method: 'POST',
     body: JSON.stringify({
       user,
@@ -32,8 +32,8 @@ const createScores = (user, score) => {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
-    .then((response) => response.json())
-    .then((json) => json.result);
+  const result = await response.json();
+  return result;
 };
 
 export { createGame as default, getScores, createScores };
