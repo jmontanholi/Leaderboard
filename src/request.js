@@ -13,12 +13,12 @@ const createGame = () => {
     .then((json) => json.result.split(' ')[3]);
 };
 
-const getScores = () => createGame().then(() => {
+const getScores = () => {
   const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oqptEhnYZtDs1PlRT1tV/scores';
   return fetch(scores)
     .then((response) => response.json())
     .then((json) => json.result);
-});
+};
 
 const createScores = (user, score) => {
   const scores = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/oqptEhnYZtDs1PlRT1tV/scores';
