@@ -25,15 +25,18 @@ const populate = () => {
     return 0;
   });
   leaderboardScores.innerHTML = '';
-  sortedList.forEach((e) => {
-    const li = document.createElement('li');
-    li.innerHTML = `
-    <p class='player'>${e.name}</p>
-    <p class='score'>${e.score}</p>
-    `;
-    leaderboardScores.appendChild(li);
-    userName.value = '';
-    userScore.value = '';
+  getScore().then((result) => {
+    const list = JSON.parse(result);
+    list.result.forEach((e) => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+      <p class='player'>${e.user}</p>
+      <p class='score'>${e.score}</p>
+      `;
+      leaderboardScores.appendChild(li);
+      userName.value = '';
+      userScore.value = '';
+    });
   });
 };
 
@@ -42,8 +45,4 @@ populate();
 submitBtn.addEventListener('click', () => {
   addScore(scoreList);
   populate();
-});
-
-getScore().then((result) => {
-  console.log(JSON.parse(result));
 });
