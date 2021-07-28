@@ -15,19 +15,19 @@ const userScore = document.getElementById('userScore');
 const refreshBtn = document.getElementById('refreshBtn');
 
 const populate = () => {
-  const sortedList = scoreList.sort((a, b) => {
-    if (a.score > b.score) {
-      return -1;
-    }
-    if (a.score < b.score) {
-      return 1;
-    }
-    return 0;
-  });
   leaderboardScores.innerHTML = '';
   getScore().then((result) => {
     const list = JSON.parse(result);
-    list.result.forEach((e) => {
+    const sortedList = list.result.sort((a, b) => {
+      if (a.score > b.score) {
+        return -1;
+      }
+      if (a.score < b.score) {
+        return 1;
+      }
+      return 0;
+    });
+    sortedList.forEach((e) => {
       const li = document.createElement('li');
       li.innerHTML = `
       <p class='player'>${e.user}</p>
