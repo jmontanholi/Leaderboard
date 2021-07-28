@@ -1,9 +1,11 @@
+import { createScores } from './request.js';
+
 const error = document.getElementById('error');
 const submitBtn = document.getElementById('submitBtn');
 const userName = document.getElementById('userName');
 const userScore = document.getElementById('userScore');
 
-const addScore = (scoreList) => {
+const addScore = () => {
   const userName = document.getElementById('userName');
   const userScore = document.getElementById('userScore');
 
@@ -12,8 +14,7 @@ const addScore = (scoreList) => {
     error.classList.add('d-grid');
     submitBtn.classList.remove('submit');
   } else {
-    const score = { name: userName.value, score: userScore.value };
-    scoreList.push(score);
+    createScores(userName.value, Number(userScore.value));
   }
 };
 
