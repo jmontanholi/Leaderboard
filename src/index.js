@@ -24,16 +24,19 @@ const populate = () => {
       return 0;
     });
     leaderboardScores.innerHTML = '';
-    sortedList.forEach((e) => {
+    for (let i = 0; i < sortedList.length; i += 1) {
       const li = document.createElement('li');
+      if ((i % 2) === 0) {
+        li.classList.add('li-pink');
+      }
       li.innerHTML = `
-      <p class='player'>${e.user}</p>
-      <p class='score'>${e.score}</p>
+      <p class='player'>${sortedList[i].user}</p>
+      <p class='score'>${sortedList[i].score}</p>
       `;
       leaderboardScores.appendChild(li);
       userName.value = '';
       userScore.value = '';
-    });
+    }
   });
 };
 
