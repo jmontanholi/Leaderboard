@@ -15,6 +15,7 @@ This is a leaderboard website project with the goal to teach us how to use APIs.
 - JavaScript
 - Webpack
 - Git & Github
+- Leaderboard API (If you want to know more about the API and use it please look at this [link](https://www.notion.so/microverse/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3))
 
 ## Live Demo
 
