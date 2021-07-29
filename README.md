@@ -19,7 +19,7 @@ This is a leaderboard website project with the goal to teach us how to use APIs.
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://jmontanholi.github.io/Leaderboard/)
 
 
 ## Getting Started
