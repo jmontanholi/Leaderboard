@@ -5,6 +5,15 @@
   list-style: none;
 }
 
+#body {
+  background-color: #ffeceb;
+}
+
+.li-pink {
+  background-color: #ffeceb;
+  width: 100%;
+}
+
 .error {
   color: red;
   font-size: 20px;
@@ -17,11 +26,14 @@
 }
 
 .leaderboard-show {
-  width: 35%;
+  width: 45%;
   min-height: 200px;
   max-height: 500px;
   margin-top: 10%;
   margin-left: 15%;
+  background-color: #e66767;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 .leaderboard-form {
@@ -30,6 +42,9 @@
   flex-direction: column;
   margin-left: 80px;
   margin-top: 195px;
+  background-color: #e66767;
+  border-radius: 15px;
+  padding: 15px;
 }
 
 .scores-div {
@@ -38,11 +53,13 @@
   max-height: 250px;
   border: 2px solid gray;
   border-radius: 10px;
+  background-color: white;
 }
 
 .leaderboard-scores {
   font-size: 56px;
   overflow: auto;
+  padding: 0;
 }
 
 .leaderboard-title {
@@ -53,19 +70,19 @@
   border-radius: 8px;
   font-weight: bold;
   border: 2px solid black;
-  box-shadow: 5px 10px 5px gray;
+  box-shadow: 5px 10px 5px #c44569;
 }
 
 .button:hover {
-  box-shadow: 1px 2px 2px gray;
+  box-shadow: 1px 2px 2px #c44569;
   background-color: rgb(226, 226, 226);
 }
 
-/* create this in JS */
 li {
   display: flex;
   justify-content: space-between;
   margin-right: 10px;
+  padding-left: 20px;
 }
 
 .player {
@@ -78,4 +95,15 @@ li {
 
 .submit {
   margin-left: 180px;
+}
+
+input {
+  border-radius: 15px;
+  border: 2px solid black;
+  box-shadow: 5px 10px 5px #c44569;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 1px 2px 2px #c44569;
 }
