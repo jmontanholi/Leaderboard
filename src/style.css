@@ -14,10 +14,6 @@
   width: 100%;
 }
 
-.leaderboard-scores {
-  padding: 0;
-}
-
 .error {
   color: red;
   font-size: 20px;
@@ -63,6 +59,7 @@
 .leaderboard-scores {
   font-size: 56px;
   overflow: auto;
+  padding: 0;
 }
 
 .leaderboard-title {
